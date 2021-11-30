@@ -9,6 +9,9 @@ html {
 body {
     margin: 0;
     padding: 0;
+    background-color: #faf5ec;
+    line-height: 1.4;
+    font-family: 'Montserrat', sans-serif;
 }
 
 h1, h2, h3, h4, h5, h6, p {
@@ -16,36 +19,72 @@ h1, h2, h3, h4, h5, h6, p {
     padding: 0;
 }
 
+h1 {
+    font-family: 'Outfit', sans-serif;
+    font-weight: 800;
+    font-size: 4.5em;
+    color: #262b3f;
+}
+
+h2 {
+    color: #4abac6;
+}
+
+h3 {
+    color: #b3674d;
+}
+
+h4 {
+    color: #010101;
+}
+
+li {
+    color: #6c718c;
+}
+
 /*main section*/
 .main {
     display: grid;
-    grid-template-columns: 2fr 6fr 2fr;
-    grid-template-rows: 18vh 25vh minmax(50vh, auto) 7vh;
+    grid-template-columns: 2fr 1.5fr 3fr 1.5fr 2fr;
+    grid-template-rows: 18vh 30vh minmax(52vh, auto) 10vh;
     grid-template-areas:
-        'header header  header'
-        'sidebar form image'
-        'sidebar shelf shelf'
-        'footer footer footer'
+        'icon icon header image1 image1'
+        'sidebar . form image1 image1'
+        'sidebar shelf shelf shelf shelf'
+        'footer footer footer footer footer'
     ;
+    padding: 5vh 5vw 2.5vh;
 }
 
 /*head section*/
 .header {
     grid-area: header;
+    text-align: center;
 }
+
+.icon {
+    grid-area: icon;
+    text-align: start;
+    align-self: end;
+}
+
 
 /*sidebar section*/
 .sidebar {
     grid-area: sidebar;
+    padding-top: 2em;
 
 }
 
-.img {
-    grid-area: image;
+.img1 {
+    grid-area: image1;
+    text-align: center;
 }
+
 
 /*form section*/
 .form {
+    padding-top: 30px;
     grid-area: form;
     display: flex;
     flex-direction: column;
@@ -56,20 +95,148 @@ h1, h2, h3, h4, h5, h6, p {
 
 .form>input {
     flex: 1 1 auto;
-    width: 50%
+    width: 80%
 }
 
 .form>button {
     flex: 1 1 auto;
-    width: 50%;
+    width: 80%;
 }
 
 /*shelf section*/
 .shelf {
     grid-area: shelf;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1em;
+    padding: 25px 20px 10px;
 }
+
+.shelf>div {
+    height: 40vh;
+    flex-basis: 23%;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    padding: 5px;
+}
+
+.shelf>div>button {
+    font-size: 1em;
+    width: 100%;
+    align-self: center;
+}
+
 
 /*footer section*/
 .footer {
     grid-area: footer;
+}
+
+.footer {
+    text-align: end;
+}
+
+#quote {
+    color: #873e23;
+    text-shadow: 0.5px 0.5px #cac3ba;
+    font-size: 1.2em;
+}
+
+#quote-author {
+    color: black;
+    text-shadow: 0.5px 0.5px #a7b1b3;
+}
+
+/*Buttons section*/
+/*I copied all the buttons from
+https://copy-paste-css.com/
+*/
+input {
+    font-size: 14px;
+    border-radius: 6px;
+    line-height: 1.5;
+    padding: 5px 10px;
+    transition: box-shadow 100ms ease-in, border 100ms ease-in, background-color 100ms ease-in;
+    border: 2px solid #dee1e2;
+    color: rgb(14, 14, 16);
+    background: #dee1e2;
+    display: block;
+    height: 36px;
+}
+
+input:hover {
+    border-color: #ccc;
+}
+
+input:focus {
+    border-color: #9147ff;
+    background: #fff;
+}
+
+#add {
+    display: inline-block;
+    outline: 0;
+    text-align: center;
+    cursor: pointer;
+    padding: 11px 15px;
+    border: 0;
+    color: #fff;
+    font-size: 17.5px;
+    border: 2px solid transparent;
+    border-color: #000;
+    color: #000;
+    background: transparent;
+    font-weight: 800;
+    line-height: 30px;
+    transition: background, color .1s ease-in-out;
+}
+
+#add:hover {
+    background-color: #000;
+    color: #fff;
+}
+
+
+
+
+.reading {
+    display: inline-block;
+    outline: none;
+    cursor: pointer;
+    font-weight: 600;
+    border-radius: 3px;
+    padding: 12px 24px;
+    border: 0;
+    color: #fff;
+    background: #000a47;
+    line-height: 1.15;
+    font-size: 16px;
+    margin-top: 10px;
+}
+
+.reading:hover {
+    transition: all .1s ease;
+    box-shadow: 0 0 0 0 #fff, 0 0 0 3px #1de9b6;
+}
+
+
+.deleting {
+
+    display: inline-block;
+    outline: none;
+    cursor: pointer;
+    font-weight: 600;
+    border-radius: 3px;
+    padding: 12px 24px;
+    border: 0;
+    color: #3a4149;
+    background: #e7ebee;
+    line-height: 1.15;
+    font-size: 16px;
+}
+
+.deleting:hover {
+    transition: all .1s ease;
+    box-shadow: 0 0 0 0 #fff, 0 0 0 3px #1de9b6;
 }

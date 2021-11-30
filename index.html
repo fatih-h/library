@@ -6,6 +6,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Library</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="stylesheet" href="style/style.css">
     <script defer src="index.js"></script>
 </head>
@@ -15,25 +17,32 @@
         <div class="header">
             <h1>Library</h1>
         </div>
+        <div class="empty"></div>
+        <div class='icon'>
+            <img src="media/book (1).png" alt="book">
+        </div>
         <div class="sidebar">
-            <h4>Name of Books</h4>
+            <h2>Name of Books</h2>
             <ol id="list">
 
             </ol>
         </div>
-        <div class="img"></div>
+        <div class="img1">
+            <img src="media/penguins-top.jpg" alt="penguin" width="auto" height="100%;">
+        </div>
+
         <form action="/" class="form" id="form">
             <input type="text" name="title" id="title" placeholder="Title" required>
             <input type="text" name="author" id="author" placeholder="Author">
-            <input type="number" name="page" id="page" placeholder="Number of pages" min="1">
+            <input type="number" name="page" id="page" placeholder="Pages" min="1">
             <button type="submit" id="add">Add</button>
         </form>
         <div class="shelf" id="shelf">
 
         </div>
         <div class="footer">
-            <p>Books are like mirrors: if a fool looks in, you cannot expect a genius to look out.</p>
-            <p>-J.K. Rowling</p>
+            <p id="quote">Books are like mirrors: if a fool looks in, you cannot expect a genius to look out.</p>
+            <p id="quote-author">-J.K. Rowling</p>
         </div>
     </div>
 </body>
