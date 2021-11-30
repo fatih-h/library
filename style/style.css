@@ -8,27 +8,68 @@ html {
 
 body {
     margin: 0;
+    padding: 0;
 }
 
+h1, h2, h3, h4, h5, h6, p {
+    margin: 0;
+    padding: 0;
+}
+
+/*main section*/
 .main {
-    display: flex;
-    flex-direction: column;
-    height: 100vh;
+    display: grid;
+    grid-template-columns: 2fr 6fr 2fr;
+    grid-template-rows: 18vh 25vh minmax(50vh, auto) 7vh;
+    grid-template-areas:
+        'header header  header'
+        'sidebar form image'
+        'sidebar shelf shelf'
+        'footer footer footer'
+    ;
+}
+
+/*head section*/
+.header {
+    grid-area: header;
+}
+
+/*sidebar section*/
+.sidebar {
+    grid-area: sidebar;
 
 }
 
+.img {
+    grid-area: image;
+}
+
+/*form section*/
 .form {
-    flex: 0 1 40%;
+    grid-area: form;
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    gap: 5px;
+    align-items: center;
+    justify-content: center;
 }
 
-.form > * {
-    text-align: center;
-    flex: 0 1 20%;
+.form>input {
+    flex: 1 1 auto;
+    width: 50%
 }
 
-.book {
-    flex: 0 1 60%;
+.form>button {
+    flex: 1 1 auto;
+    width: 50%;
+}
+
+/*shelf section*/
+.shelf {
+    grid-area: shelf;
+}
+
+/*footer section*/
+.footer {
+    grid-area: footer;
 }
